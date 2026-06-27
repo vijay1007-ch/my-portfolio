@@ -16,7 +16,7 @@
     // Find the script tag for main.js to determine the site root
     const scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
-      const src = scripts[i].src;
+      const src = scripts[i].getAttribute('src');
       if (src && src.indexOf('main.js') !== -1) {
         // Remove 'js/main.js' to get the root
         return src.replace(/js\/main\.js.*$/, '');
@@ -31,12 +31,7 @@
     
     // Check if there is an edit in localStorage first
     const key = 'portfolio_' + file.replace('.json', '');
-    let localData = null;
-    try {
-      localData = localStorage.getItem(key);
-    } catch (e) {
-      console.warn('Could not access localStorage for ' + file + ':', e);
-    }
+    const localData = localStorage.getItem(key);
     if (localData) {
       try {
         const parsed = JSON.parse(localData);
