@@ -1,0 +1,58 @@
+[
+  {
+    "badge": "⚛️",
+    "name": "ReactJS",
+    "provider": "Infosys Springboard",
+    "issueDate": "June 5, 2026",
+    "image": "assets/certificates/react-js.png",
+    "credentialUrl": "assets/certificates/react-js.pdf"
+  },
+  {
+    "badge": "🎨",
+    "name": "CSS Essentials",
+    "provider": "Cisco Networking Academy",
+    "issueDate": "Jan 27, 2026",
+    "image": "assets/certificates/css-essentials.png",
+    "credentialUrl": "assets/certificates/css-essentials.pdf"
+  },
+  {
+    "badge": "🌐",
+    "name": "HTML Essentials",
+    "provider": "Cisco Networking Academy",
+    "issueDate": "Jan 18, 2026",
+    "image": "assets/certificates/html-essentials.png",
+    "credentialUrl": "assets/certificates/html-essentials.pdf"
+  },
+  {
+    "badge": "💻",
+    "name": "JavaScript Essentials 1",
+    "provider": "Cisco Networking Academy",
+    "issueDate": "Feb 25, 2026",
+    "image": "assets/certificates/javascript-essentials-1.png",
+    "credentialUrl": "assets/certificates/javascript-essentials-1.pdf"
+  },
+  {
+    "badge": "⚙️",
+    "name": "Fundamentals of Signal Processing",
+    "provider": "Vibration Research University",
+    "issueDate": "June 4, 2026",
+    "image": "assets/certificates/fundamentals-signal-processing.png",
+    "credentialUrl": "assets/certificates/fundamentals-signal-processing.pdf"
+  },
+  {
+    "badge": "📊",
+    "name": "Sampling & Reconstruction",
+    "provider": "Vibration Research University",
+    "issueDate": "June 4, 2026",
+    "image": "assets/certificates/sampling-reconstruction.png",
+    "credentialUrl": "assets/certificates/sampling-reconstruction.pdf"
+  },
+  {
+    "badge": "📉",
+    "name": "Mathematics for Understanding Waveform Relationships",
+    "provider": "Vibration Research University",
+    "issueDate": "June 4, 2026",
+    "image": "assets/certificates/math-waveform.png",
+    "credentialUrl": "assets/certificates/math-waveform.pdf"
+  }
+]

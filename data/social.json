@@ -1,0 +1,27 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/vijay1007-ch",
+    "icon": "github"
+  },
+  {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/in/vijay-bikkina-183a06357/",
+    "icon": "linkedin"
+  },
+  {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/vijayyyyy_0510/",
+    "icon": "instagram"
+  },
+  {
+    "platform": "WhatsApp",
+    "url": "https://wa.me/919866606967",
+    "icon": "whatsapp"
+  },
+  {
+    "platform": "Email",
+    "url": "mailto:bikkinavijay0@gmail.com",
+    "icon": "email"
+  }
+]

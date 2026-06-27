@@ -1,0 +1,50 @@
+[
+  {
+    "company": "Freelance",
+    "role": "Full Stack Web Developer",
+    "description": "Building custom websites and web applications for small businesses, hospitals, restaurants, and startups. Handling everything from design to deployment.",
+    "startDate": "2024-01",
+    "endDate": "Present",
+    "highlights": [
+      "Specialized in business & healthcare websites",
+      "Built responsive, SEO-optimized websites",
+      "Done 4+ real sem projects"
+    ]
+  },
+  {
+    "company": "KLH",
+    "role": "Btech ECE student",
+    "description": "Currently pursuing Btech in ECE at Koneru Lakshmaiah University",
+    "startDate": "2025-07",
+    "endDate": "2029-05",
+    "highlights": [
+      "Strong foundation in Electronics and Communication Engineering",
+      "Working on cutting-edge projects in AI, Robotics, and IoT",
+      "Developed strong problem-solving skills through rigorous coursework",
+      "Developed strong communication skills through presentations and projects"
+    ]
+  },
+  {
+    "company": "Freelance",
+    "role": "Part-Time",
+    "description": "Freelance work for small businesses, hospitals, restaurants, and startups. Handling everything from design to deployment.",
+    "highlights": [
+      "Contributed to 5+ open-source repos",
+      "Fixed critical bugs in popular libraries",
+      "Improved documentation quality",
+      "Mentored junior contributors"
+    ]
+  },
+  {
+    "company": "Open Source",
+    "role": "Contributor",
+    "description": "Active contributor to open-source projects on GitHub. Focus areas include web development tools, documentation improvements, and bug fixes.",
+    "startDate": "2022-06",
+    "endDate": "Present",
+    "highlights": [
+      "Contributed to 3+ open-source repos",
+      "Improved documentation quality",
+      "Fixed error in my some of the friends projects"
+    ]
+  }
+]

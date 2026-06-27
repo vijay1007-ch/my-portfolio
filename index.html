@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>Vijay — Full Stack Web Developer | Websites That Help Businesses Grow</title>
+  <meta name="description" content="I'm Vijay, a freelance Full Stack Web Developer. I build fast, modern, conversion-focused websites for hospitals, restaurants, startups, and small businesses.">
+  <meta name="keywords" content="web developer, full stack developer, freelance developer, website design, business website, hospital website, restaurant website, portfolio">
+  <meta name="author" content="Vijay">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vijay.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vijay — Full Stack Web Developer">
+  <meta property="og:description" content="I build fast, modern websites for hospitals, restaurants, startups, and growing businesses.">
+  <meta property="og:url" content="https://vijay.dev/">
+  <meta property="og:site_name" content="Vijay Portfolio">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vijay — Full Stack Web Developer">
+  <meta name="twitter:description" content="I build fast, modern websites for hospitals, restaurants, startups, and growing businesses.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vijay",
+    "jobTitle": "Full Stack Web Developer",
+    "url": "https://vijay.dev/",
+    "description": "Freelance Full Stack Web Developer specializing in business, hospital, and restaurant websites.",
+    "knowsAbout": ["Web Development", "Frontend", "Backend", "React", "Node.js", "JavaScript", "SEO"]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%232563EB'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>V</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar transparent" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        <span>V</span>ijay
+      </a>
+
+      <div class="nav-right">
+        <div class="nav-links" id="nav-links" role="menubar">
+          <a href="index.html" class="active" role="menuitem">Home</a>
+          <a href="index.html#about" role="menuitem">About</a>
+          <a href="index.html#skills" role="menuitem">Skills</a>
+          <a href="projects.html" role="menuitem">Projects</a>
+          <a href="certificates.html" role="menuitem">Certificates</a>
+          <a href="contact.html" role="menuitem">Contact</a>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-shapes parallax-bg" data-parallax-speed="0.15">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+      <div class="hero-shape hero-shape-4"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content" id="hero-content">
+        <!-- Populated by main.js from profile.json -->
+      </div>
+      <div class="hero-image-wrapper" id="hero-image">
+        <!-- Populated by main.js from profile.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">About Me</span>
+        <h2>Who I Am</h2>
+        <p class="section-subtitle">A passionate developer dedicated to building exceptional digital experiences.</p>
+      </div>
+      <div class="about-grid" id="about-content">
+        <!-- Populated by main.js from profile.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Skills</span>
+        <h2>My Tech Stack</h2>
+        <p class="section-subtitle">Technologies and tools I use to build amazing products.</p>
+      </div>
+      <div class="filter-tabs" id="skills-tabs">
+        <!-- Populated by main.js from skills.json -->
+      </div>
+      <div class="skills-grid" id="skills-grid">
+        <!-- Populated by main.js from skills.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Experience</span>
+        <h2>My Journey</h2>
+        <p class="section-subtitle">Professional experience and career milestones.</p>
+      </div>
+      <div class="timeline" id="experience-timeline">
+        <!-- Populated by main.js from experience.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section" id="cta">
+    <div class="container cta-content">
+      <span class="section-label">Let's Work Together</span>
+      <h2>Ready to Build Your <span class="text-gradient">Dream Website</span>?</h2>
+      <p>Let's discuss your project and create something amazing for your business.</p>
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;justify-content:center">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get In Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3><span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">V</span>ijay</h3>
+          <p>Full Stack Web Developer building fast, modern websites that help businesses grow online.</p>
+          <div class="footer-socials" id="footer-socials">
+            <!-- Populated by main.js -->
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year">2025</span> <span id="footer-name">Vijay</span>. All rights reserved. Built with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="whatsapp-fab" id="whatsapp-fab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">Chat with me</span>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

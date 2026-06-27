@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Vijay | Full Stack Web Developer</title>
+  <meta name="description" content="Learn more about Vijay — a passionate Full Stack Web Developer with experience building websites for businesses, hospitals, and restaurants.">
+  <meta property="og:title" content="About — Vijay | Full Stack Web Developer">
+  <meta property="og:description" content="Learn more about Vijay — a passionate Full Stack Web Developer.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%232563EB'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>V</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div style="display:flex;flex-direction:column;align-items:center">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
+
+  <!-- Navbar -->
+  <nav class="navbar transparent" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><span>V</span>ijay</a>
+      <div class="nav-right">
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle">🌙</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="separator">›</span>
+        <span>About</span>
+      </div>
+      <h1>About <span class="text-gradient">Me</span></h1>
+      <p>Helping Businesses Grow Online</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-intro-grid">
+        <div class="about-image-col animate-on-scroll">
+          <div class="about-image-wrapper">
+            <img src="assets/images/profile.png" alt="Vijay" class="about-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232563EB%22/><text x=%2250%22 y=%2260%22 font-size=%2240%22 fill=%22white%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22bold%22>V</text></svg>'">
+          </div>
+        </div>
+        <div class="about-bio-col animate-on-scroll">
+          <p id="about-bio-text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Me & Mission -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="about-cards-grid">
+        <div class="glass-card animate-on-scroll">
+          <h3 style="margin-bottom:var(--space-4)">Why Choose Me</h3>
+          <ul class="why-choose-list" id="why-choose-list">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+        <div class="glass-card animate-on-scroll">
+          <h3 style="margin-bottom:var(--space-4)">My Mission</h3>
+          <p id="about-mission-text" style="line-height:var(--line-height-relaxed);color:var(--text-secondary)"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Process</span>
+        <h2>My Process</h2>
+        <p class="section-subtitle">How I take your website from concept to launch.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card glass-card animate-on-scroll">
+          <div class="process-number">1</div>
+          <h4 style="margin-bottom:var(--space-1)">Discover</h4>
+          <p style="font-size:var(--text-sm)">Understanding your business goals and website requirements.</p>
+        </div>
+        <div class="process-card glass-card animate-on-scroll">
+          <div class="process-number">2</div>
+          <h4 style="margin-bottom:var(--space-1)">Design</h4>
+          <p style="font-size:var(--text-sm)">Creating a custom, modern design mockup for your brand.</p>
+        </div>
+        <div class="process-card glass-card animate-on-scroll">
+          <div class="process-number">3</div>
+          <h4 style="margin-bottom:var(--space-1)">Develop</h4>
+          <p style="font-size:var(--text-sm)">Writing clean, responsive code optimizing speeds and SEO.</p>
+        </div>
+        <div class="process-card glass-card animate-on-scroll">
+          <div class="process-number">4</div>
+          <h4 style="margin-bottom:var(--space-1)">Launch</h4>
+          <p style="font-size:var(--text-sm)">Final testing, speed optimization, and going live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Skills</span>
+        <h2>Tech Stack</h2>
+        <p class="section-subtitle">Technologies and tools I use to build your products.</p>
+      </div>
+      <div class="tech-stack-container animate-on-scroll" id="about-tech-stack">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid" id="about-stats">
+        <div class="stat-card glass-card animate-on-scroll">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card glass-card animate-on-scroll">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Responsive Design</div>
+        </div>
+        <div class="stat-card glass-card animate-on-scroll">
+          <div class="stat-number">24 hrs</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>Ready to Start?</h2>
+      <p>Let's collaborate to build high-performance web solutions tailored to your business needs.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Let's Build Your Website</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3><span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">V</span>ijay</h3>
+          <p>Full Stack Web Developer building fast, modern websites that help businesses grow online.</p>
+          <div class="footer-socials" id="footer-socials"></div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year">2025</span> <span id="footer-name">Vijay</span>. All rights reserved. Built with ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="whatsapp-fab" id="whatsapp-fab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">Chat with me</span>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

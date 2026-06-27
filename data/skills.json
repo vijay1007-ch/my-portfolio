@@ -1,0 +1,62 @@
+[
+  {
+    "name": "HTML5",
+    "icon": "🌐",
+    "category": "Frontend"
+  },
+  {
+    "name": "CSS3",
+    "icon": "🎨",
+    "category": "Frontend"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "⚡",
+    "category": "Frontend"
+  },
+  {
+    "name": "React",
+    "icon": "⚛️",
+    "category": "Frontend"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "📘",
+    "category": "Frontend"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "💨",
+    "category": "Frontend"
+  },
+  {
+    "name": "Python",
+    "icon": "🐍",
+    "category": "Programming"
+  },
+  {
+    "name": "Java",
+    "icon": "☕",
+    "category": "Programming"
+  },
+  {
+    "name": "Git",
+    "icon": "📦",
+    "category": "Version Control"
+  },
+  {
+    "name": "VS Code",
+    "icon": "💻",
+    "category": "Tools"
+  },
+  {
+    "name": "Netlify",
+    "icon": "🌍",
+    "category": "Deployment"
+  },
+  {
+    "name": "Vercel",
+    "icon": "▲",
+    "category": "Deployment"
+  }
+]

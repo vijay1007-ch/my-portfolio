@@ -1,0 +1,56 @@
+[
+  {
+    "id": "smart-airlines-addons",
+    "title": "Smart Airlines Addons",
+    "description": "A premium travel personalization platform that allows passengers to customize their flight journey with curated addons, seamless booking integration, secure payments, and 24/7 support.",
+    "image": "assets/images/smart-airlines-addons.jpg",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "Node.js", "Express"],
+    "liveDemo": "https://smart-airlines-addons.onrender.com/",
+    "github": "https://github.com/vijay1007-ch/Smart_Airlines_Addons",
+    "features": [
+      "Premium Add-on Customization",
+      "Seamless Booking flow",
+      "Secure Multi-payment Integration",
+      "24/7 Customer Support Desk"
+    ],
+    "category": "Web App",
+    "status": "Completed",
+    "completionDate": "2024-05-15"
+  },
+  {
+    "id": "ismc",
+    "title": "Industrial Sensor Monitoring Communication (ISMC)",
+    "description": "An academic digital communication and signal processing project modeling BPSK-based transmission. Shows how industrial sensor data is transmitted, filtered, and analyzed through a noisy AWGN channel.",
+    "image": "assets/images/ismc.png",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "Signal Processing", "BPSK", "AWGN"],
+    "liveDemo": "https://vijay1007-ch.github.io/MFCS---Project-ISMC/",
+    "github": "https://github.com/vijay1007-ch/MFCS---Project-ISMC",
+    "features": [
+      "BPSK Digital Modulation simulation",
+      "AWGN channel noise simulation",
+      "Bit Error Rate (BER) performance analysis",
+      "Real-time signal filtering and analysis interface"
+    ],
+    "category": "Signal Processing",
+    "status": "Completed",
+    "completionDate": "2024-11-20"
+  },
+  {
+    "id": "issne",
+    "title": "Industrial Staff Sync Network Environment (ISSNE)",
+    "description": "An AI-powered workforce management platform that revolutionizes attendance tracking, real-time work hours calculation, and predictive salary analytics.",
+    "image": "assets/images/issne.png",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "AI Analytics", "Responsive Design"],
+    "liveDemo": "https://vijay1007-ch.github.io/Software/HTML/homepage.html",
+    "github": "https://github.com/vijay1007-ch/Software",
+    "features": [
+      "AI-Powered Attendance Tracking",
+      "Real-time Hours Calculation",
+      "Predictive Salary Analytics",
+      "Interactive Admin & User Dashboards"
+    ],
+    "category": "Web App",
+    "status": "Completed",
+    "completionDate": "2025-02-10"
+  }
+]

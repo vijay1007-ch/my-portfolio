@@ -1,0 +1,53 @@
+{
+  "name": "Vijay",
+  "title": "Full Stack Web Developer",
+  "tagline": "Websites That Help Businesses Grow Online",
+  "subtitle": "I design and build fast, modern, conversion-focused websites for hospitals, restaurants, startups, and growing businesses.",
+  "roles": [
+    "Full Stack Developer",
+    "UI/UX Enthusiast",
+    "Freelance Web Developer",
+    "Problem Solver"
+  ],
+  "bio": "I'm Vijay, a web developer who helps businesses create fast, modern, and mobile-friendly websites that attract more customers and build trust online. Whether you're a hospital, restaurant, clinic, or startup, I build websites designed to showcase your brand and help your business grow.",
+  "mission": "To help local businesses compete online with beautiful, high-performance websites that increase visibility, improve customer experience, and create lasting impressions.",
+  "whyWorkWithMe": [
+    "Modern Design",
+    "Mobile Responsive",
+    "Fast Loading",
+    "SEO Friendly",
+    "Affordable Pricing",
+    "Ongoing Support",
+    "Clean Code",
+    "Easy to Maintain"
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science",
+      "institution": "KL University",
+      "year": "2023 - 2027",
+      "description": "Focused on software engineering, web technologies, and data structures."
+    }
+  ],
+  "location": "Hyderabad, India",
+  "languages": ["English", "Hindi", "Telugu"],
+  "available": true,
+  "availabilityText": "Available for Freelance Projects",
+  "email": "bikkinavijay0@gmail.com",
+  "phone": "+91 98666 06967",
+  "whatsapp": "919866606967",
+  "mapEmbedUrl": "",
+  "resumeUrl": "assets/resume/resume.pdf",
+  "profileImage": "assets/images/profile.png",
+  "stats": {
+    "projectsCompleted": 25,
+    "happyClients": 15,
+    "yearsExperience": 3,
+    "technologiesUsed": 20
+  },
+  "funFacts": [
+    "I debug code faster with coffee ☕",
+    "I've written over 50,000 lines of code",
+    "I believe in pixel-perfect designs"
+  ]
+}

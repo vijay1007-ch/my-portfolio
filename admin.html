@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Portfolio Editor</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%232563EB'/><text x='50' y='68' font-size='55' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>V</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .admin-container {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: var(--space-8);
+    }
+    .auth-card {
+      max-width: 400px;
+      margin: 150px auto;
+      text-align: center;
+    }
+    .admin-nav {
+      display: flex;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: var(--space-4);
+    }
+    .admin-tab {
+      padding: var(--space-2) var(--space-4);
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+    .admin-tab:hover, .admin-tab.active {
+      color: var(--text-primary);
+      background: var(--glass-bg-hover);
+    }
+    .admin-tab.active {
+      color: var(--primary-light);
+      border-bottom: 2px solid var(--primary);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    .admin-panel {
+      display: none;
+    }
+    .admin-panel.active {
+      display: block;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    .form-full {
+      grid-column: span 2;
+    }
+    .list-item-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+    }
+    .list-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .list-item-actions {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .admin-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--glass-border);
+    }
+    .help-text {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-full {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lock Screen -->
+  <div id="auth-screen" class="admin-container">
+    <div class="auth-card glass-card">
+      <h2 style="margin-bottom:var(--space-2)">🔒 Admin Access</h2>
+      <p style="color:var(--text-secondary);margin-bottom:var(--space-6)">Please enter your password to edit your profile.</p>
+      <form id="auth-form" onsubmit="handleAuth(event)">
+        <div class="form-group" style="margin-bottom:var(--space-4)">
+          <input type="password" id="auth-pass" placeholder="Password" style="text-align:center" required autofocus>
+          <div id="auth-error" class="form-error" style="text-align:center">Incorrect Password</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Unlock Dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="dashboard" class="admin-container" style="display:none">
+    <div class="glass-card" style="padding:var(--space-8)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6)">
+        <div>
+          <h2>⚙️ Portfolio Admin</h2>
+          <p style="color:var(--text-secondary)">Edit profile data, skills, and journey items in real-time.</p>
+        </div>
+        <button onclick="handleLogout()" class="btn btn-secondary btn-sm">Lock Dashboard</button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="admin-nav">
+        <button class="admin-tab active" onclick="switchTab('profile-tab', this)">Profile Details</button>
+        <button class="admin-tab" onclick="switchTab('skills-tab', this)">Manage Skills</button>
+        <button class="admin-tab" onclick="switchTab('experience-tab', this)">My Journey</button>
+      </div>
+
+      <!-- PANEL 1: PROFILE DETAILS -->
+      <div id="profile-tab" class="admin-panel active">
+        <form id="profile-form" onsubmit="saveProfile(event)" class="form-grid">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" required>
+          </div>
+          <div class="form-group form-full">
+            <label>Tagline</label>
+            <input type="text" name="tagline" required>
+          </div>
+          <div class="form-group form-full">
+            <label>Hero Subtitle</label>
+            <input type="text" name="subtitle" required>
+          </div>
+          <div class="form-group form-full">
+            <label>About Bio</label>
+            <textarea name="bio" style="min-height:120px" required></textarea>
+          </div>
+          <div class="form-group form-full">
+            <label>My Mission</label>
+            <textarea name="mission" style="min-height:80px"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" name="location">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" name="phone">
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Number</label>
+            <input type="text" name="whatsapp" placeholder="e.g. 919876543210">
+          </div>
+          <div class="form-group form-full">
+            <button type="submit" class="btn btn-primary">Save Profile Changes</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- PANEL 2: MANAGE SKILLS -->
+      <div id="skills-tab" class="admin-panel">
+        <h3 style="margin-bottom:var(--space-4)">Current Skills</h3>
+        <div id="skills-list"></div>
+
+        <h3 style="margin-top:var(--space-8);margin-bottom:var(--space-4)">Add New Skill</h3>
+        <form id="skill-form" onsubmit="addSkill(event)" class="form-grid">
+          <div class="form-group">
+            <label>Skill Name</label>
+            <input type="text" name="skillName" placeholder="e.g. Next.js" required>
+          </div>
+          <div class="form-group">
+            <label>Icon Emoji</label>
+            <input type="text" name="skillIcon" placeholder="e.g. ⚛️, 🌐" required>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select name="skillCategory">
+              <option value="Frontend">Frontend</option>
+              <option value="Programming">Programming</option>
+              <option value="Version Control">Version Control</option>
+              <option value="Tools">Tools</option>
+              <option value="Deployment">Deployment</option>
+            </select>
+          </div>
+          <div class="form-group" style="display:flex;align-items:flex-end">
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Add Skill</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- PANEL 3: MY JOURNEY -->
+      <div id="experience-tab" class="admin-panel">
+        <h3 style="margin-bottom:var(--space-4)">Timeline Items</h3>
+        <div id="experience-list"></div>
+
+        <h3 style="margin-top:var(--space-8);margin-bottom:var(--space-4)">Add Timeline Item</h3>
+        <form id="experience-form" onsubmit="addTimelineItem(event)" class="form-grid">
+          <div class="form-group">
+            <label>Company / Organization</label>
+            <input type="text" name="company" required>
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <input type="text" name="role" required>
+          </div>
+          <div class="form-group form-full">
+            <label>Description</label>
+            <textarea name="description" style="min-height:80px" required></textarea>
+          </div>
+          <div class="form-group form-full">
+            <label>Key Highlights (One per line)</label>
+            <textarea name="highlights" placeholder="Highlight 1&#10;Highlight 2" style="min-height:80px"></textarea>
+          </div>
+          <div class="form-group form-full">
+            <button type="submit" class="btn btn-primary">Add Timeline Item</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- BOTTOM ACTIONS: EXPORT / RESET -->
+      <div class="admin-actions">
+        <button onclick="resetToDefault()" class="btn btn-secondary btn-sm" style="border-color:var(--error);color:var(--error)">
+          Clear Edits (Reset to Defaults)
+        </button>
+        <div style="display:flex;gap:var(--space-2)">
+          <button onclick="downloadJSON('profile')" class="btn btn-secondary btn-sm">Download profile.json</button>
+          <button onclick="downloadJSON('skills')" class="btn btn-secondary btn-sm">Download skills.json</button>
+          <button onclick="downloadJSON('experience')" class="btn btn-secondary btn-sm">Download experience.json</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Config: Change your password here
+    const ADMIN_PASSWORD = "vijay";
+
+    // Authentication Checks
+    if (sessionStorage.getItem("admin_authenticated") === "true") {
+      showDashboard();
+    }
+
+    function handleAuth(e) {
+      e.preventDefault();
+      const entered = document.getElementById("auth-pass").value;
+      if (entered === ADMIN_PASSWORD) {
+        sessionStorage.setItem("admin_authenticated", "true");
+        showDashboard();
+      } else {
+        document.getElementById("auth-error").style.display = "block";
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem("admin_authenticated");
+      location.reload();
+    }
+
+    function showDashboard() {
+      document.getElementById("auth-screen").style.display = "none";
+      document.getElementById("dashboard").style.display = "block";
+      loadData();
+    }
+
+    // Tab Switching
+    function switchTab(tabId, tabButton) {
+      document.querySelectorAll(".admin-panel").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".admin-tab").forEach(t => t.classList.remove("active"));
+      
+      document.getElementById(tabId).classList.add("active");
+      tabButton.classList.add("active");
+    }
+
+    // Data Load & Render
+    let profileData = {};
+    let skillsData = [];
+    let experienceData = [];
+
+    async function loadData() {
+      // Load Profile
+      const localProfile = localStorage.getItem("portfolio_profile");
+      if (localProfile) {
+        profileData = JSON.parse(localProfile);
+      } else {
+        const res = await fetch("data/profile.json");
+        profileData = await res.json();
+      }
+      populateProfileForm();
+
+      // Load Skills
+      const localSkills = localStorage.getItem("portfolio_skills");
+      if (localSkills) {
+        skillsData = JSON.parse(localSkills);
+      } else {
+        const res = await fetch("data/skills.json");
+        skillsData = await res.json();
+      }
+      renderSkillsList();
+
+      // Load Experience
+      const localExp = localStorage.getItem("portfolio_experience");
+      if (localExp) {
+        experienceData = JSON.parse(localExp);
+      } else {
+        const res = await fetch("data/experience.json");
+        experienceData = await res.json();
+      }
+      renderExperienceList();
+    }
+
+    // PROFILE MANAGEMENT
+    function populateProfileForm() {
+      const form = document.getElementById("profile-form");
+      form.name.value = profileData.name || "";
+      form.title.value = profileData.title || "";
+      form.tagline.value = profileData.tagline || "";
+      form.subtitle.value = profileData.subtitle || "";
+      form.bio.value = profileData.bio || "";
+      form.mission.value = profileData.mission || "";
+      form.location.value = profileData.location || "";
+      form.email.value = profileData.email || "";
+      form.phone.value = profileData.phone || "";
+      form.whatsapp.value = profileData.whatsapp || "";
+    }
+
+    function saveProfile(e) {
+      e.preventDefault();
+      const form = e.target;
+      profileData.name = form.name.value;
+      profileData.title = form.title.value;
+      profileData.tagline = form.tagline.value;
+      profileData.subtitle = form.subtitle.value;
+      profileData.bio = form.bio.value;
+      profileData.mission = form.mission.value;
+      profileData.location = form.location.value;
+      profileData.email = form.email.value;
+      profileData.phone = form.phone.value;
+      profileData.whatsapp = form.whatsapp.value;
+
+      localStorage.setItem("portfolio_profile", JSON.stringify(profileData, null, 2));
+      alert("✅ Profile changes saved successfully! Refresh your site to see updates.");
+    }
+
+    // SKILLS MANAGEMENT
+    function renderSkillsList() {
+      const list = document.getElementById("skills-list");
+      if (!skillsData.length) {
+        list.innerHTML = `<div class="help-text">No skills added yet.</div>`;
+        return;
+      }
+      list.innerHTML = skillsData.map((skill, index) => `
+        <div class="list-item-card">
+          <div class="list-item-info">
+            <strong>${skill.name}</strong>
+            <span class="help-text">${skill.category} • Icon: ${skill.icon}</span>
+          </div>
+          <button onclick="deleteSkill(${index})" class="btn btn-secondary btn-sm" style="border-color:var(--error);color:var(--error);padding:var(--space-1) var(--space-3)">Delete</button>
+        </div>
+      `).join('');
+    }
+
+    function addSkill(e) {
+      e.preventDefault();
+      const form = e.target;
+      const newSkill = {
+        name: form.skillName.value,
+        icon: form.skillIcon.value,
+        category: form.skillCategory.value
+      };
+      skillsData.push(newSkill);
+      localStorage.setItem("portfolio_skills", JSON.stringify(skillsData, null, 2));
+      renderSkillsList();
+      form.reset();
+    }
+
+    function deleteSkill(index) {
+      if (confirm("Delete this skill?")) {
+        skillsData.splice(index, 1);
+        localStorage.setItem("portfolio_skills", JSON.stringify(skillsData, null, 2));
+        renderSkillsList();
+      }
+    }
+
+    // JOURNEY (EXPERIENCE) MANAGEMENT
+    function renderExperienceList() {
+      const list = document.getElementById("experience-list");
+      if (!experienceData.length) {
+        list.innerHTML = `<div class="help-text">No timeline items yet.</div>`;
+        return;
+      }
+      list.innerHTML = experienceData.map((item, index) => `
+        <div class="list-item-card">
+          <div class="list-item-info">
+            <strong>${item.role}</strong>
+            <span class="help-text">${item.company}</span>
+          </div>
+          <button onclick="deleteTimelineItem(${index})" class="btn btn-secondary btn-sm" style="border-color:var(--error);color:var(--error);padding:var(--space-1) var(--space-3)">Delete</button>
+        </div>
+      `).join('');
+    }
+
+    function addTimelineItem(e) {
+      e.preventDefault();
+      const form = e.target;
+      const hArray = form.highlights.value.split('\n').map(h => h.trim()).filter(h => h.length > 0);
+      const newItem = {
+        company: form.company.value,
+        role: form.role.value,
+        description: form.description.value,
+        highlights: hArray
+      };
+      experienceData.push(newItem);
+      localStorage.setItem("portfolio_experience", JSON.stringify(experienceData, null, 2));
+      renderExperienceList();
+      form.reset();
+    }
+
+    function deleteTimelineItem(index) {
+      if (confirm("Delete this journey item?")) {
+        experienceData.splice(index, 1);
+        localStorage.setItem("portfolio_experience", JSON.stringify(experienceData, null, 2));
+        renderExperienceList();
+      }
+    }
+
+    // SAVE & EXPORT
+    function resetToDefault() {
+      if (confirm("Are you sure you want to clear all your edits? This will restore the original files content.")) {
+        localStorage.removeItem("portfolio_profile");
+        localStorage.removeItem("portfolio_skills");
+        localStorage.removeItem("portfolio_experience");
+        location.reload();
+      }
+    }
+
+    function downloadJSON(type) {
+      let data, filename;
+      if (type === 'profile') {
+        data = profileData;
+        filename = 'profile.json';
+      } else if (type === 'skills') {
+        data = skillsData;
+        filename = 'skills.json';
+      } else if (type === 'experience') {
+        data = experienceData;
+        filename = 'experience.json';
+      }
+
+      const str = JSON.stringify(data, null, 2);
+      const blob = new Blob([str], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
