@@ -10,7 +10,12 @@
 
   /* ── Get saved or system theme ── */
   function getPreferredTheme() {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    let saved = null;
+    try {
+      saved = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      console.warn('Could not read theme from localStorage:', e);
+    }
     if (saved) return saved;
 
     // Default to dark
@@ -20,7 +25,11 @@
   /* ── Apply theme ── */
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {
+      console.warn('Could not save theme to localStorage:', e);
+    }
     updateToggleIcon(theme);
   }
 
@@ -67,7 +76,13 @@
 
   /* ── Listen for system theme changes ── */
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    if (!localStorage.getItem(STORAGE_KEY)) {
+    let hasSavedTheme = false;
+    try {
+      hasSavedTheme = !!localStorage.getItem(STORAGE_KEY);
+    } catch (err) {
+      console.warn('Could not check localStorage theme:', err);
+    }
+    if (!hasSavedTheme) {
       applyTheme(e.matches ? 'dark' : 'light');
     }
   });
