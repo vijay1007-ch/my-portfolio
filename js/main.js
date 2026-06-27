@@ -488,26 +488,49 @@
 
       if (hasError) return;
 
-      // Construct mailto
+      // Use the secure FormSubmit string instead of the raw email address
+      const targetEmail = '41a14d04242abf50ee88ff992a75f65d';
       const subject = form.querySelector('[name="subject"]');
-      const mailtoUrl = 'mailto:' + (cache['profile.json'] ? cache['profile.json'].email : 'vijay@example.com') +
-        '?subject=' + encodeURIComponent((subject ? subject.value : 'Website Inquiry')) +
-        '&body=' + encodeURIComponent(
-          'Name: ' + (name ? name.value : '') + '\n' +
-          'Email: ' + (email ? email.value : '') + '\n\n' +
-          (message ? message.value : '')
-        );
+      const phone = form.querySelector('[name="phone"]');
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
 
-      window.open(mailtoUrl, '_self');
-
-      // Show success
-      const successMsg = form.querySelector('.form-success');
-      if (successMsg) {
-        successMsg.classList.add('visible');
-        setTimeout(function () { successMsg.classList.remove('visible'); }, 5000);
-      }
-
-      form.reset();
+      fetch("https://formsubmit.co/ajax/" + targetEmail, {
+          method: "POST",
+          headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+              name: name ? name.value : '',
+              email: email ? email.value : '',
+              phone: phone ? phone.value : '',
+              _subject: subject && subject.value ? subject.value : 'New Contact Form Submission',
+              message: message ? message.value : ''
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+          
+          // Show success
+          const successMsg = form.querySelector('.form-success');
+          if (successMsg) {
+            successMsg.classList.add('visible');
+            setTimeout(function () { successMsg.classList.remove('visible'); }, 5000);
+          }
+          form.reset();
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+          alert('There was an error sending your message. Please try again later.');
+      });
     });
   }
 
