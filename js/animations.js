@@ -254,7 +254,7 @@
     const loader = document.querySelector('.loading-screen');
     if (!loader) return;
 
-    window.addEventListener('load', function () {
+    function hideLoader() {
       setTimeout(function () {
         loader.classList.add('hidden');
         // Remove from DOM after animation
@@ -262,7 +262,13 @@
           loader.remove();
         }, 500);
       }, 600);
-    });
+    }
+
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+    }
   }
 
   /* ── Initialize All Animations ── */
