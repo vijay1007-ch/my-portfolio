@@ -1,8 +1,8 @@
-# Vijay — Premium Developer Portfolio
+# Vijay —  Developer Portfolio
 
 A modern, premium, static portfolio website built with **HTML5, CSS3, and Vanilla JavaScript**. No frameworks, no libraries — built entirely from scratch.
 
-## 🚀 Features
+##  Features
 
 - **Dark/Light Theme** — Toggle between themes with localStorage persistence
 - **Fully Responsive** — Mobile, tablet, laptop, desktop
@@ -18,7 +18,7 @@ A modern, premium, static portfolio website built with **HTML5, CSS3, and Vanill
 - **Back to Top** — Scroll-to-top button
 - **Scroll Progress Bar** — Visual indicator at top
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 portfolio/
@@ -58,7 +58,7 @@ portfolio/
     └── fonts/          # Custom fonts
 ```
 
-## ✏️ How to Update Content
+##  How to Update Content
 
 ### Add a new project
 Edit `data/projects.json` — add a new object:
@@ -95,9 +95,9 @@ Edit `data/services.json` — add a new object with title, description, icon, fe
 ### Update personal info
 Edit `data/profile.json` — change name, bio, email, phone, location, stats, etc.
 
-**No HTML changes required!**
 
-## 🖥️ Local Development
+
+##  Local Development
 
 Simply open `index.html` in your browser, or use a local server:
 
@@ -112,7 +112,7 @@ npx serve .
 # Install "Live Server" extension → Right-click index.html → "Open with Live Server"
 ```
 
-## 🌐 Deployment
+##  Deployment
 
 This is a static site — deploy anywhere:
 
@@ -121,6 +121,6 @@ This is a static site — deploy anywhere:
 - **GitHub Pages** — Push to a `gh-pages` branch
 - **Firebase Hosting** — `firebase deploy`
 
-## 📝 License
+##  License
 
 MIT License — Free to use and modify.
