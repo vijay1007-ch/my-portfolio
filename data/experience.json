@@ -28,12 +28,7 @@
     "company": "Freelance",
     "role": "Part-Time",
     "description": "Freelance work for small businesses, hospitals, restaurants, and startups. Handling everything from design to deployment.",
-    "highlights": [
-      "Contributed to 5+ open-source repos",
-      "Fixed critical bugs in popular libraries",
-      "Improved documentation quality",
-      "Mentored junior contributors"
-    ]
+    "highlights": []
   },
   {
     "company": "Open Source",
